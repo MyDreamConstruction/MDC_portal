@@ -87,6 +87,7 @@
 										<th>Description</th>
 										<th>Amount (&#8377;)</th>
 										<th>Created By</th>
+										<th>Payment Date</th>
 										<th>Created Date</th>
 										<!-- <th>Recently Paid</th> -->
 										<!-- <th>Status</th> -->
@@ -124,6 +125,7 @@
 											</c:choose>
 										</td>
 										<td>${payment.createdBy}</td>
+										<td>${payment.paymentDate}</td>
 										<td>${payment.createddate}</td>
 										<td>
 											<div class="hidden-sm hidden-xs action-buttons">
