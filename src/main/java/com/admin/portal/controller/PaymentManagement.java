@@ -8,7 +8,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -86,6 +88,29 @@ public class PaymentManagement {
 		}
 		
 		return model;
+	}
+	
+	@GetMapping("/admin/edit_payment/{payId}")
+	public ModelAndView getPaymantDetailsByID(@PathVariable("payId") Integer payId) {
+		logger.info("saveUplocadedFileTrns page");
+		ModelAndView model = new ModelAndView("/admin/edit_transaction");
+		try {
+			Payments paymentDetails=paymentService.getPaymantDetailsByID(payId);
+			model.addObject("paymentDetails",paymentDetails);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return model;
+	}
+	@PostMapping(value="/admin/edit_transaction")
+	public String editPaymentDetails(@ModelAttribute Payments payments){
+		logger.info("paymentDefineSubmit page");
+		ModelAndView model = new ModelAndView("/admin/edit_transaction");
+		 paymentService.editPaymentDetails(payments);
+			
+		return "redirect:/admin/transactions_list";
 	}
 
 	

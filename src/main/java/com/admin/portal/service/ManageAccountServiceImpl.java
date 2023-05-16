@@ -36,6 +36,7 @@ public class ManageAccountServiceImpl implements ManageAccountService {
 	public Long saveAccount(ManageAccounts accounts) {
 
 		accounts.setCreated(new Date());
+		accounts.setUpdatedDate(new Date());
 		accounts.setStatus(true);
 		logger.info("Account Details ---> " + accounts);
 		return manageAccountDao.saveManageAccounts(accounts);

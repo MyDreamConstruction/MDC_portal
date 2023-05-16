@@ -85,6 +85,20 @@
 										</div>
 									</div>
 									<div class="form-group">
+										<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="email">Payment Date <span style="color: red;">*</span>:</label>
+										
+										<div class="col-sm-5">
+										<div class="input-group">
+											<input class="form-control date-picker" id="datepicker" type="text" name="paymentDate" class="col-xs-12 col-sm-6" required="required" data-date-format="dd-mm-yyyy"/>
+											<span class="input-group-addon">
+												<i class="fa fa-calendar bigger-110"></i>
+											</span>
+										</div>
+									</div>
+
+										
+									</div>
+									<div class="form-group">
 										<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="comment">Payment Desc <span style="color: red;">*</span>:</label>
 
 										<div class="col-xs-12 col-sm-9">
@@ -101,7 +115,7 @@
 										<div class="col-xs-12 col-sm-9">
 											<div class="clearfix">
 												<select class="input-xlarge" id="createdBy" name="createdBy" required="required">
-													<option value="">Select</option>
+													<!-- <option value="">Select</option> -->
 													<sec:authorize access="hasRole('ADMIN')">
 														<option value="ADMIN">ADMIN</option>
 													</sec:authorize>
@@ -190,5 +204,18 @@
 	  </div>
 	</div>
 </div>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      dateFormat: 'dd-mm-yy' 
+    });
+  } );
+  </script>
 </jsp:body>
 </defaultTemplate:adminDefaultDecorator>

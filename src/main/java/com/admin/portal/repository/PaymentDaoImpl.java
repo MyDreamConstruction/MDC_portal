@@ -137,6 +137,26 @@ public class PaymentDaoImpl implements PaymentDao{
 	}
 
 
+	@Override
+	public Payments getPaymantDetailsByID(Integer payId) {
+		logger.info("getting transaction by Id " );
+		Payments transaction = null;
+		transaction=(Payments) sessionFactory.getCurrentSession().createQuery("from Payments where  payId=:payId")
+				.setParameter("payId", payId).uniqueResult();
+		logger.info("transaction info : " +transaction);
+		return transaction;
+		
+	}
+
+
+	@Override
+	public void editPaymentDetails(Payments payments) { 
+		 sessionFactory.getCurrentSession().update(payments);
+		logger.info("Transaction updated Successfully!");
+		
+	}
+
+
 
 	
 }

@@ -67,9 +67,9 @@
 							<div class="infobox-icon">
 								<i class="ace-icon fa fa-credit-card"></i>
 							</div>
-
+							
 							<div class="infobox-data">
-								<span class="infobox-data-number"><i class="ace-icon fa fa-inr"></i> <f:formatNumber value="${paymentStatastics.totalCRAmt}" type="number"/></span>
+								<span class="infobox-data-number"><i class="ace-icon fa fa-inr"></i> <f:setLocale value="en_IN"/><f:formatNumber value="${paymentStatastics.totalCRAmt}" type="number" /></span>
 								<div class="infobox-content">Recent Paymt CR's</div>
 							</div>
 
@@ -82,7 +82,7 @@
 							</div>
 
 							<div class="infobox-data">
-								<span class="infobox-data-number"><i class="ace-icon fa fa-inr"></i> <f:formatNumber value="${paymentStatastics.totalExpensesAmt}" type="number"/></span>
+								<span class="infobox-data-number"><i class="ace-icon fa fa-inr"></i> <f:setLocale value="en_IN"/><f:formatNumber value="${paymentStatastics.totalExpensesAmt}" type="number" /></span>
 								<div class="infobox-content">Recent Paymt DR's</div>
 							</div>
 							<div class="stat stat-important">&nbsp;</div>

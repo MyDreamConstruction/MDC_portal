@@ -27,16 +27,19 @@ public class ManageAccounts {
 	@Column(name = "createdDate")
 	private Date created;
 
+	@Column(name = "updatedDate")
+	private Date updatedDate;
 	public ManageAccounts() {
 
 	}
 
-	public ManageAccounts(Long id, String name, boolean status, Date created) {
+	public ManageAccounts(Long id, String name, boolean status, Date created,Date updatedDate) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.status = status;
 		this.created = created;
+		this.updatedDate=updatedDate;
 	}
 
 	public Long getId() {
@@ -70,10 +73,20 @@ public class ManageAccounts {
 	public void setCreated(Date created) {
 		this.created = created;
 	}
+	
+	public Date getUpdatedDate() {
+		return updatedDate;
+	}
+
+	public void setUpdatedDate(Date updatedDate) {
+		this.updatedDate = updatedDate;
+	}
 
 	@Override
 	public String toString() {
-		return "ManageAccounts [id=" + id + ", name=" + name + ", status=" + status + ", created=" + created + "]";
+		return "ManageAccounts [id=" + id + ", name=" + name + ", status=" + status + ", created=" + created
+				+ ", updatedDate=" + updatedDate + "]";
 	}
+
 
 }

@@ -42,6 +42,9 @@ public class Payments {
 
 	@Column(name = "updateddate")
 	private Date updateddate;
+	
+	@Column(name = "paymentDate")
+	private String paymentDate;
 
 	@Transient
 	private Long payerNameId;
@@ -51,7 +54,7 @@ public class Payments {
 	}
 
 	public Payments(Integer payId, String paymentType, String payerName, String paymentDesc, double amount,
-			String createdBy, String paymentStatus, Date createddate, Date updateddate) {
+			String createdBy, String paymentStatus,String paymentdate, Date createddate, Date updateddate) {
 		super();
 		this.payId = payId;
 		this.paymentType = paymentType;
@@ -60,6 +63,7 @@ public class Payments {
 		this.amount = amount;
 		this.createdBy = createdBy;
 		this.paymentStatus = paymentStatus;
+		this.paymentDate = paymentdate;
 		this.createddate = createddate;
 		this.updateddate = updateddate;
 	}
@@ -145,13 +149,20 @@ public class Payments {
 		this.payerNameId = payerNameId;
 	}
 
-	@Override
-	public String toString() {
-		return "Payments [payId=" + payId + ", paymentType=" + paymentType + ", payerName=" + payerName
-				+ ", paymentDesc=" + paymentDesc + ", amount=" + amount + ", createdBy=" + createdBy
-				+ ", paymentStatus=" + paymentStatus + ", createddate=" + createddate + ", updateddate=" + updateddate
-				+ "]";
+	public String getPaymentDate() {
+		return paymentDate;
 	}
 
+	public void setPaymentDate(String paymentDate) {
+		this.paymentDate = paymentDate;
+	}
+
+	@Override
+	public String toString() {
+		return "Payments [payId=" + payId + ", payerName=" + payerName + ", paymentType=" + paymentType
+				+ ", paymentDesc=" + paymentDesc + ", amount=" + amount + ", createdBy=" + createdBy
+				+ ", paymentStatus=" + paymentStatus + ", createddate=" + createddate + ", updateddate=" + updateddate
+				+ ", paymentDate=" + paymentDate + ", payerNameId=" + payerNameId + "]";
+	}
 	
 }

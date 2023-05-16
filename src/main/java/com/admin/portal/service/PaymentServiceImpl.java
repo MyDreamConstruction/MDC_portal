@@ -251,4 +251,16 @@ public class PaymentServiceImpl implements PaymentService {
 		
 	}
 
+	@Override
+	public Payments getPaymantDetailsByID(Integer payId) {
+		
+		Payments paymentDetails=paymentDao.getPaymantDetailsByID(payId);
+		return paymentDetails;
+	}
+
+	@Override
+	public void editPaymentDetails(Payments payments) {
+		 paymentDao.editPaymentDetails(payments);
+	}
+
 }

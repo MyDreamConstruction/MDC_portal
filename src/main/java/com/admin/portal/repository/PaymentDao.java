@@ -18,4 +18,8 @@ public interface PaymentDao {
 
 	List<Payments> getAllTransactionsBasedOnSearch(TransactionSearchDto tnxSearch) throws ParseException;
 
+	Payments getPaymantDetailsByID(Integer payId);
+
+	void editPaymentDetails(Payments payments);
+
 }

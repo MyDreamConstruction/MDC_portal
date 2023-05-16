@@ -21,4 +21,10 @@ public interface PaymentService {
 
 	List<Payments> getAllTransactionsBasedOnSearch(TransactionSearchDto tnxSearch);
 
+	//Payments updatePaymantDetailsByID(Integer payId);
+
+	Payments getPaymantDetailsByID(Integer payId);
+
+	void editPaymentDetails(Payments payments);
+
 }
